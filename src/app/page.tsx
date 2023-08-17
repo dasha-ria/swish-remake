@@ -1,113 +1,140 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-swish-bg min-w-screen min-h-screen">
+      <Image
+        className="w-32 h-auto pt-8 pl-4"
+        src="/swish-logo.png"
+        alt="Swish logo"
+        width="1734"
+        height="528"
+      ></Image>
+
+      <div className="relative z-10">
+        <div className="w-full bg-gradient-to-t from-swish-bg from-35% to-swish-bg/0 flex flex-col justify-end">
+          <div className="pl-4 mt-60 mb-20">
+            <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gradient-text-purple via-swish-blue to-gradient-text-green inline">
+              Quick
+            </h1>
+            <h2 className="text-5xl text-white font-bold">payments</h2>
+            <p className="text-swish-light-text text-base pt-8 w-80">
+              Millions of Swedes - from friends, families, small and large
+              businesses - use Swish for quick and smooth payments.
+            </p>
+            <button className="mt-6 flex items-center bg-swish-blue gap-4 px-6 py-4 rounded-xl">
+              <p className="text-white font-bold text-xl">Get started</p>
+              <svg
+                className="h-6 fill-current text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+              >
+                <path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div className="w-full absolute flex justify-center items-center top-0 -z-10">
+          <div className="w-[30rem] h-[30rem] rounded-full bg-swish-blue/40 blur-3xl"></div>
+
+          <Image
+            className="w-52 h-auto absolute"
+            src="/phone-homepage.png"
+            alt="Phone showcasing Swish app"
+            width="1656"
+            height="3407"
+          ></Image>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      <div className="pl-4">
+        <p className="text-3xl font-bold text-white">No more cash.</p>
+        <p className="text-swish-light-text w-72 pt-4">
+          Splitting the bill with your friends? Sending someone a birthday gift?
+          Selling something on Blocket? You can do this instantly.
+        </p>
+      </div>
+
+      <div className="pl-4 pt-12">
+        <p className="text-3xl font-bold text-white">
+          No more queues in store.
+        </p>
+        <p className="text-swish-light-text w-72 pt-4">
+          You don’t have the credit card with you? No problem, scan a QR code
+          and pay instantly.
+        </p>
+      </div>
+
+      <div className="pt-24">
+        <div className="ml-16 flex items-center justify-center rounded-md bg-gradient-to-t from-dark-gray to-light-gray w-10 h-10">
+          <svg
+            className="h-8 w-auto fill-current text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+          >
+            <path d="m393-165 279-335H492l36-286-253 366h154l-36 255Zm-73 85 40-280H160l360-520h80l-40 320h240L400-80h-80Zm153-395Z" />
+          </svg>
+        </div>
+        <p className="pl-16 pt-4 text-3xl font-bold text-white">
+          Quick transfers
+        </p>
+        <p className="pl-16 text-swish-light-text w-72 pt-2">
+          Money in your bank account in just seconds.
+        </p>
+        <div className="pt-12 flex justify-center items-center">
+          <Image
+            className="w-64 h-auto"
+            src="/phone-homepage.png"
+            alt="Phone showcasing Swish app"
+            width="1656"
+            height="3407"
+          ></Image>
+        </div>
+      </div>
+      <div className="pt-20">
+        <div className="ml-16 flex items-center justify-center rounded-md bg-gradient-to-t from-dark-gray to-light-gray w-10 h-10">
+          <svg
+            className="h-8 w-auto fill-current text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+          >
+            <path d="M450-201h60v-40h60q12.75 0 21.375-8.625T600-271v-130q0-12.75-8.625-21.375T570-431H420v-70h180v-60h-90v-40h-60v40h-60q-12.75 0-21.375 8.625T360-531v130q0 12.75 8.625 21.375T390-371h150v70H360v60h90v40ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h361l219 219v521q0 24-18 42t-42 18H220Zm311-581v-159H220v680h520v-521H531ZM220-820v159-159 680-680Z" />
+          </svg>
+        </div>
+        <p className="pl-16 pt-4 text-3xl font-bold text-white">
+          Request? <br></br> No problem.
+        </p>
+        <p className="pl-16 text-swish-light-text w-72 pt-2">
+          Money in your bank account in just seconds.
+        </p>
+        <div className="pt-12 flex justify-center items-center">
+          <Image
+            className="w-64 h-auto"
+            src="/phone-homepage.png"
+            alt="Phone showcasing Swish app"
+            width="1656"
+            height="3407"
+          ></Image>
+        </div>
+      </div>
+
+      <div className="pt-36 flex flex-col justify-center items-center">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+          className="w-40 h-auto"
+          src="/swish-logo.png"
+          alt="Swish logo"
+          width="1734"
+          height="528"
+        ></Image>
+        <p className="text-2xl text-center font-bold text-white pt-12">
+          Join 8+ million people<br></br>already using Swish.
+        </p>
+        <button className="mt-8 bg-swish-blue px-12 py-4 rounded-xl">
+          <p className="text-white font-bold text-xl">Download Swish</p>
+        </button>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <div className="-mt-28 relative h-72 w-full bg-gradient-to-t from-swish-blue/30 to-swish-bg/0"></div>
+    </div>
+  );
 }
