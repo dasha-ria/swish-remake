@@ -21,6 +21,8 @@ const config: Config = {
         "swish-light-text": "#B1B8C1",
         "dark-gray": "#3B3842",
         "light-gray": "#6B6972",
+        "dark-gray2": "#121016",
+        "light-gray2": "#1F1B26",
       },
       blur: {
         "4xl": "120px",
