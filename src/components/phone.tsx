@@ -32,7 +32,7 @@ export function Phone() {
             </div>
 
             <div className="t-l-info absolute left-[20px] top-[8px] text-[10px] text-white font-medium">
-              {new Date().toLocaleTimeString("sv-SE", {
+              {currentTime.toLocaleTimeString("sv-SE", {
                 hour: "numeric",
                 minute: "numeric",
                 hour12: false,
