@@ -23,6 +23,8 @@ const config: Config = {
         "light-gray": "#6B6972",
         "dark-gray2": "#121016",
         "light-gray2": "#1F1B26",
+        "phone-whitish": "##ffffff33",
+        "phone-battery": "#ffffffb5",
       },
       blur: {
         "4xl": "120px",
