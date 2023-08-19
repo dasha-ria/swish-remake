@@ -16,7 +16,9 @@ export function Phone() {
     <div className="min-w-screen min-h-screen bg-blue-700">
       <section className="pl-[75px] pt-[75px]">
         <div className="outside-border scale-110 relative w-[212px] h-[438px] border-[0.6px] border-white -ml-[9px] mt-[37px] rounded-[35px]">
-          <div className="absolute h-full w-full top-0 left-0 rounded-[35px] overflow-hidden"></div>
+          <div className="absolute h-full w-full top-0 left-0 rounded-[35px] overflow-hidden">
+            {/* add children here */}
+          </div>
           <div className="silencer absolute bg-white rounded-md w-[2px] h-[13px] -left-[1px] top-[81.5px] opacity-[0.8]"></div>
           <div className="volume-up absolute bg-white rounded-md w-[1px] h-[28px] -left-[1.5px] opacity-[0.8] top-[110px]"></div>
           <div className="volume-down absolute bg-white rounded-md w-[1px] h-[28px] -left-[1.5px] opacity-[0.8] top-[148px]"></div>
