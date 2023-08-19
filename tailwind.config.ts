@@ -25,6 +25,10 @@ const config: Config = {
         "light-gray2": "#1F1B26",
         "phone-whitish": "##ffffff33",
         "phone-battery": "#ffffffb5",
+        "app-init-buttons": "#222224",
+        "app-md-gray": "#18191E",
+        "app-dark-gray": "#131418",
+        "app-light-gray": "#929290",
       },
       blur: {
         "4xl": "120px",
