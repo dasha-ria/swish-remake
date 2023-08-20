@@ -80,6 +80,28 @@ export function Init() {
           Next
         </button>
       </div>
+      <div className="absolute flex gap-10 justify-center bottom-0 h-[4.5rem] border-t border-app-light-gray/40 rounded-xl w-full bg-app-dark-gray">
+        <div className="flex flex-col items-center mt-2">
+          <svg
+            className="h-5 w-auto fill-current text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+          >
+            <path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" />
+          </svg>
+          <p className="text-white text-sm font-bold">Home</p>
+        </div>
+        <div className="flex flex-col items-center mt-2">
+          <svg
+            className="h-5 w-auto fill-current text-app-light-gray"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+          >
+            <path d="M477-120q-149 0-253-105.5T120-481h60q0 125 86 213t211 88q127 0 215-89t88-216q0-124-89-209.5T477-780q-68 0-127.5 31T246-667h105v60H142v-208h60v106q52-61 123.5-96T477-840q75 0 141 28t115.5 76.5Q783-687 811.5-622T840-482q0 75-28.5 141t-78 115Q684-177 618-148.5T477-120Zm128-197L451-469v-214h60v189l137 134-43 43Z" />
+          </svg>
+          <p className="text-app-light-gray text-sm">History</p>
+        </div>
+      </div>
     </div>
   );
 }
