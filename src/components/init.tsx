@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Init() {
   return (
-    <div className="w-[235px] h-[460px] bg-swish-bg">
+    <div className="w-[250px] h-[500px] bg-swish-bg">
       <Image
         className="w-16 h-auto pt-8 mx-auto"
         src="/swish-logo.png"
@@ -47,7 +47,7 @@ export function Init() {
           <p className="text-white text-[0.6rem]">Scan</p>
         </button>
       </div>
-      <div className="flex mt-4 mx-auto justify-center flex-col gap-3 w-[12.5rem] h-44 bg-app-md-gray rounded-xl">
+      <div className="flex mt-4 mx-auto justify-center flex-col gap-3 w-[12.5rem] h-44 bg-app-md-gray rounded-xl tabular-nums">
         <div className="flex justify-around">
           <p className="text-white font-medium text-xl">1</p>
           <p className="text-white font-medium text-xl">2</p>
@@ -63,11 +63,11 @@ export function Init() {
           <p className="text-white font-medium text-xl">8</p>
           <p className="text-white font-medium text-xl">9</p>
         </div>
-        <div className="flex justify-around items-center">
-          <p className="text-white font-medium text-xl">,</p>
-          <p className="text-white font-medium text-xl">0</p>
+        <div className="flex items-center">
+          <p className="text-white font-medium text-xl flex-1 text-center">,</p>
+          <p className="text-white font-medium text-xl flex-1 text-center">0</p>
           <svg
-            className="h-4 w-auto fill-current text-white"
+            className="h-5 w-auto fill-current text-white flex-1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 -960 960 960"
           >
