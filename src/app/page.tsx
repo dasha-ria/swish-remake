@@ -92,7 +92,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="hidden lg:px-8 lg:py-8 lg:flex lg:items-center lg:w-[24rem] lg:h-64 ">
+            <div className="hidden lg:px-8 lg:py-8 lg:flex lg:items-center lg:w-[24rem] lg:h-64">
               <div>
                 <div className="ml-16 lg:ml-0 flex items-center justify-center rounded-md lg:rounded-lg bg-gradient-to-t from-dark-gray to-light-gray w-10 h-10 ">
                   <svg
