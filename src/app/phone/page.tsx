@@ -14,7 +14,8 @@ export default function PhonePage() {
       {/* <ChoosePerson></ChoosePerson> */}
       {/* <Sending></Sending> */}
       {/* <Sent></Sent> */}
-      <Requesting></Requesting>
+      {/* <Requesting></Requesting> */}
+      <Requested></Requested>
     </Phone>
   );
 }
