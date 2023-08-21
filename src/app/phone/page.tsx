@@ -4,6 +4,8 @@ import { Init } from "@/components/init";
 import { ChoosePerson } from "@/components/choose";
 import { Sending } from "@/components/sending";
 import { Sent } from "@/components/sent";
+import { Requesting } from "@/components/requesting";
+import { Requested } from "@/components/requested";
 
 export default function PhonePage() {
   return (
@@ -11,7 +13,8 @@ export default function PhonePage() {
       {/* <Init></Init> */}
       {/* <ChoosePerson></ChoosePerson> */}
       {/* <Sending></Sending> */}
-      <Sent></Sent>
+      {/* <Sent></Sent> */}
+      <Requesting></Requesting>
     </Phone>
   );
 }
