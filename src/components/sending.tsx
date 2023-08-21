@@ -8,6 +8,7 @@ export function Sending() {
       >
         <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
       </svg>
+
       <div className="absolute w-full top-28 flex flex-col items-center justify-center">
         <p className="text-white text-2xl font-bold">200 kr</p>
         <svg
@@ -31,13 +32,12 @@ export function Sending() {
         </div>
 
         <form className="flex flex-col justify-center items-center gap-4 mt-12">
-          <div className="relative">
-            <input
-              className="placeholder-style bg-app-md-gray rounded-lg w-[12.5rem] h-28 placeholder-app-light-gray"
-              type="text"
+          <div className="flex flex-col bg-app-md-gray rounded-lg w-[12.5rem] h-28 placeholder-app-light-gray">
+            <textarea
+              className="bg-transparent p-2 flex-1 z-50 resize-none outline-none text-white"
               placeholder="Write a message.."
-            ></input>
-            <div className="absolute bottom-2 left-2 flex gap-2">
+            ></textarea>
+            <div className="mb-2 ml-2 flex gap-2">
               <div className="flex justify-center items-center bg-[#2D2F39] w-7 h-7 rounded-md">
                 <svg
                   className="h-4 w-auto fill-current text-white"
