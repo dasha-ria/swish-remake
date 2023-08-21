@@ -1,10 +1,10 @@
-export function ChoosePerson() {
+export function ChoosePerson({ setPerson, setCurrentPage }: any) {
   const people = [
-    { name: "Erik Johan Andersson", initials: "EA", color: "bg-[#578EF7]" },
-    { name: "Johanna Sjöberg", initials: "JS", color: "bg-[#F2BF3A]" },
-    { name: "Emma Nilsson", initials: "EN", color: "bg-[#00C6BF]" },
-    { name: "Felix Blomqvist", initials: "FB", color: "bg-[#D19EA3]" },
-    { name: "Ellen Forsberg", initials: "EF", color: "bg-[#578EF7]" },
+    { name: "Erik Johan Andersson", initials: "EA", color: "#578EF7" },
+    { name: "Johanna Sjöberg", initials: "JS", color: "#F2BF3A" },
+    { name: "Emma Nilsson", initials: "EN", color: "#00C6BF" },
+    { name: "Felix Blomqvist", initials: "FB", color: "#D19EA3" },
+    { name: "Ellen Forsberg", initials: "EF", color: "#578EF7" },
   ];
 
   return (
@@ -23,19 +23,24 @@ export function ChoosePerson() {
             <p className="text-white text-[8px] text-center pt-2">Scan QR</p>
           </div>
           {people.map(({ name, initials, color }) => (
-            <div
+            <button
+              onClick={() => {
+                setPerson({ name, initials, color, number: "+46123211" });
+                setCurrentPage("Sending");
+              }}
               key={name}
-              className="w-[64px] h-[64px] rounded-lg bg-app-md-gray flex flex-col p-2 items-center justify-center"
+              className="z-50 w-[64px] h-[64px] rounded-lg bg-app-md-gray flex flex-col p-2 items-center justify-center"
             >
               <div
-                className={`w-5 h-5 ${color} rounded-full flex justify-center items-center`}
+                style={{ backgroundColor: color }}
+                className={`w-5 h-5 rounded-full flex justify-center items-center`}
               >
                 <p className="text-white font-bold text-[8px]">{initials}</p>
               </div>
               <p className="text-white text-[8px] font-bold text-center pt-1">
                 {name}
               </p>
-            </div>
+            </button>
           ))}
         </div>
         <div className="mt-10 flex gap-3 items-center">

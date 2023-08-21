@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function Init() {
+export function Init({ amount, setAmount, setCurrentPage }: any) {
   return (
     <div className="w-[250px] h-[500px] bg-swish-bg">
       <Image
@@ -11,7 +11,15 @@ export function Init() {
         height="528"
       ></Image>
 
-      <div className="flex justify-center pt-10">
+      <div className="flex justify-center pt-10 items-center gap-2">
+        <div
+          contentEditable
+          suppressContentEditableWarning={true} // To suppress a warning related to contentEditable & React
+          className="bg-swish-bg outline-none border-red-500 min-w-[12px] fit-content text-white font-medium text-xl z-50"
+          onInput={(e) => setAmount(e.currentTarget.textContent)}
+        >
+          {amount}
+        </div>
         <h1 className="text-white font-medium text-2xl">kr</h1>
       </div>
 
@@ -76,7 +84,10 @@ export function Init() {
         </div>
       </div>
       <div className="flex justify-center mt-4">
-        <button className="bg-swish-blue py-2 rounded-lg w-[12.5rem] text-white font-bold">
+        <button
+          onClick={() => setCurrentPage("ChoosePerson")}
+          className="bg-swish-blue py-2 rounded-lg w-[12.5rem] text-white font-bold z-50"
+        >
           Next
         </button>
       </div>

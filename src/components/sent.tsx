@@ -1,19 +1,21 @@
 import Image from "next/image";
 
-export function Sent() {
+export function Sent({ person, amount, message, reset }: any) {
   return (
     <div className="relative w-[250px] h-[500px] bg-swish-bg">
-      <svg
-        className="absolute top-12 left-6 h-8 w-auto fill-current text-white"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 -960 960 960"
-      >
-        <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-      </svg>
+      <button onClick={reset} className="z-50 absolute top-12 left-6 ">
+        <svg
+          className="h-8 w-auto fill-current text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 -960 960 960"
+        >
+          <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+        </svg>
+      </button>
 
       <div className="absolute w-full top-24 flex flex-col items-center justify-center">
         <p className="text-white text-sm">Your payment was sent!</p>
-        <p className="text-white text-2xl font-bold mt-12">200 kr</p>
+        <p className="text-white text-2xl font-bold mt-12">{amount} kr</p>
         <svg
           className="h-7 w-auto fill-current text-app-light-gray mt-3"
           xmlns="http://www.w3.org/2000/svg"
@@ -23,20 +25,21 @@ export function Sent() {
         </svg>
 
         <div className="flex gap-3 items-center mt-6">
-          <div className="h-9 w-9 bg-[#578EF7] rounded-full flex justify-center items-center">
-            <p className="text-white font-bold">EA</p>
+          <div
+            style={{ backgroundColor: person.color }}
+            className="h-9 w-9 rounded-full flex justify-center items-center"
+          >
+            <p className="text-white font-bold">{person.initials}</p>
           </div>
           <div>
-            <p className="text-white font-bold text-[12px]">
-              Erik Johan Andersson
-            </p>
-            <p className="text-app-light-gray text-[11px]">+46 720 4012 345</p>
+            <p className="text-white font-bold text-[12px]">{person.name}</p>
+            <p className="text-app-light-gray text-[11px]">{person.number}</p>
           </div>
         </div>
 
         <div className="chat-bubble relative mt-6 py-2 px-3 bg-swish-blue rounded-2xl max-w-[12.5rem]">
           <p className="text-white text-xs max-w-[12.5rem] break-words">
-            Congratulations!
+            {message}
           </p>
         </div>
 
