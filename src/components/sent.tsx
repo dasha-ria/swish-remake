@@ -37,13 +37,15 @@ export function Sent({ person, amount, message, reset }: any) {
           </div>
         </div>
 
-        <div className="chat-bubble relative mt-6 py-2 px-3 bg-swish-blue rounded-2xl max-w-[12.5rem]">
-          <p className="text-white text-xs max-w-[12.5rem] break-words">
-            {message}
-          </p>
-        </div>
+        {message && (
+          <div className="chat-bubble relative mt-6 py-2 px-3 bg-swish-blue rounded-2xl max-w-[12.5rem]">
+            <p className="text-white text-xs max-w-[12.5rem] break-words">
+              {message}
+            </p>
+          </div>
+        )}
 
-        <div className="flex gap-1 mt-2">
+        <div className="flex gap-1 mt-3">
           <p className="text-app-light-gray text-[10px]">12.08.2023</p>
           <p className="text-app-light-gray text-[10px]">·</p>
           <p className="text-app-light-gray text-[10px]">20:50</p>
