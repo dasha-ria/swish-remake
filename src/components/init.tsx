@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+("use client");
 
 export function Init({ amount, setAmount, setCurrentPage }: any) {
   const inputRef = useRef(null);
