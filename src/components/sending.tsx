@@ -38,7 +38,7 @@ export function Sending({ amount, person, setMessage, setCurrentPage }: any) {
         </div>
 
         <form className="flex flex-col justify-center items-center gap-4 mt-12">
-          <div className="flex flex-col bg-app-md-gray rounded-lg w-[12.5rem] h-28 placeholder-app-light-gray">
+          <div className="flex flex-col bg-app-md-gray rounded-lg w-[12.5rem] h-28 text-sm placeholder-app-light-gray">
             <textarea
               onChange={(e) => setMessage(e.target.value)}
               className="bg-transparent p-2 flex-1 z-50 resize-none outline-none text-white"
