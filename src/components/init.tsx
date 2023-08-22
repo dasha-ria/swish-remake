@@ -3,20 +3,24 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function Init({ amount, setAmount, setCurrentPage }: any) {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLDivElement>(null);
 
   function handleNumberClick(value: any) {
     if (value === "," && amount.includes(",")) {
       return;
     }
     const nextAmount = amount + value.toString();
-    inputRef.current.textContent = nextAmount;
+    if (inputRef.current !== null) {
+      inputRef.current.textContent = nextAmount;
+    }
     setAmount(nextAmount);
   }
 
   function handleDeleteNumber() {
     const deleteAmount = amount.slice(0, -1);
-    inputRef.current.textContent = deleteAmount;
+    if (inputRef.current !== null) {
+      inputRef.current.textContent = deleteAmount;
+    }
     setAmount(deleteAmount);
   }
 
