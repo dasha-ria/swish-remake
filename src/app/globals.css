@@ -28,3 +28,7 @@
   background: #05020d;
   border-bottom-left-radius: 10px;
 }
+
+.direction-ltr {
+  direction: ltr;
+}

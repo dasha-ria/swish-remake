@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect } from "react";
 
 export function Init({ amount, setAmount, setCurrentPage }: any) {
   return (
@@ -14,12 +15,10 @@ export function Init({ amount, setAmount, setCurrentPage }: any) {
       <div className="flex justify-center pt-10 items-center gap-2">
         <div
           contentEditable
-          suppressContentEditableWarning={true} // To suppress a warning related to contentEditable & React
-          className="bg-swish-bg outline-none border-red-500 min-w-[12px] fit-content text-white font-medium text-xl z-50"
+          suppressContentEditableWarning={true}
+          className="bg-swish-bg outline-none border-red-500 min-w-[12px] fit-content text-white font-medium text-2xl z-50"
           onInput={(e) => setAmount(e.currentTarget.textContent)}
-        >
-          {amount}
-        </div>
+        />
         <h1 className="text-white font-medium text-2xl">kr</h1>
       </div>
 
