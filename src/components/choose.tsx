@@ -1,10 +1,35 @@
 export function ChoosePerson({ setPerson, setCurrentPage }: any) {
   const people = [
-    { name: "Erik Johan Andersson", initials: "EA", color: "#578EF7" },
-    { name: "Johanna Sjöberg", initials: "JS", color: "#F2BF3A" },
-    { name: "Emma Nilsson", initials: "EN", color: "#00C6BF" },
-    { name: "Felix Blomqvist", initials: "FB", color: "#D19EA3" },
-    { name: "Ellen Forsberg", initials: "EF", color: "#578EF7" },
+    {
+      name: "Erik Johan Andersson",
+      initials: "EA",
+      color: "#578EF7",
+      number: "+46 720 123 123",
+    },
+    {
+      name: "Johanna Sjöberg",
+      initials: "JS",
+      color: "#F2BF3A",
+      number: "+46 720 234 234",
+    },
+    {
+      name: "Emma Nilsson",
+      initials: "EN",
+      color: "#00C6BF",
+      number: "+46 720 345 345",
+    },
+    {
+      name: "Felix Blomqvist",
+      initials: "FB",
+      color: "#D19EA3",
+      number: "+46 720 567 567",
+    },
+    {
+      name: "Ellen Forsberg",
+      initials: "EF",
+      color: "#578EF7",
+      number: "+46 720 678 678",
+    },
   ];
 
   return (
@@ -22,10 +47,10 @@ export function ChoosePerson({ setPerson, setCurrentPage }: any) {
             </svg>
             <p className="text-white text-[8px] text-center pt-2">Scan QR</p>
           </div>
-          {people.map(({ name, initials, color }) => (
+          {people.map(({ name, initials, color, number }) => (
             <button
               onClick={() => {
-                setPerson({ name, initials, color, number: "+46123211" });
+                setPerson({ name, initials, color, number });
                 setCurrentPage("Sending");
               }}
               key={name}
