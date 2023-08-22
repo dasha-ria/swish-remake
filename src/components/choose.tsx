@@ -74,7 +74,12 @@ export function ChoosePerson({ setPerson, setCurrentPage }: any) {
               Enter name or number...
             </p>
           </div>
-          <p className="text-[10px] text-swish-blue">Cancel</p>
+          <button
+            onClick={() => setCurrentPage("Init")}
+            className="text-[10px] text-swish-blue z-50"
+          >
+            Cancel
+          </button>
         </div>
       </div>
     </div>
