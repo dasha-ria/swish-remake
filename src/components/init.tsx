@@ -1,7 +1,24 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export function Init({ amount, setAmount, setCurrentPage }: any) {
+  const inputRef = useRef(null);
+
+  function handleNumberClick(value: any) {
+    if (value === "," && amount.includes(",")) {
+      return;
+    }
+    const nextAmount = amount + value.toString();
+    inputRef.current.textContent = nextAmount;
+    setAmount(nextAmount);
+  }
+
+  function handleDeleteNumber() {
+    const deleteAmount = amount.slice(0, -1);
+    inputRef.current.textContent = deleteAmount;
+    setAmount(deleteAmount);
+  }
+
   return (
     <div className="w-[250px] h-[500px] bg-swish-bg">
       <Image
@@ -14,6 +31,7 @@ export function Init({ amount, setAmount, setCurrentPage }: any) {
 
       <div className="flex justify-center pt-10 items-center gap-2">
         <div
+          ref={inputRef}
           contentEditable
           suppressContentEditableWarning={true}
           className="bg-swish-bg outline-none border-red-500 min-w-[12px] fit-content text-white font-medium text-2xl z-50"
@@ -56,25 +74,81 @@ export function Init({ amount, setAmount, setCurrentPage }: any) {
       </div>
       <div className="flex mt-4 mx-auto justify-center flex-col gap-3 w-[12.5rem] h-44 bg-app-md-gray rounded-xl tabular-nums">
         <div className="flex justify-around">
-          <p className="text-white font-medium text-xl">1</p>
-          <p className="text-white font-medium text-xl">2</p>
-          <p className="text-white font-medium text-xl">3</p>
+          <button
+            onClick={() => handleNumberClick(1)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            1
+          </button>
+          <button
+            onClick={() => handleNumberClick(2)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            2
+          </button>
+          <button
+            onClick={() => handleNumberClick(3)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            3
+          </button>
         </div>
         <div className="flex justify-around">
-          <p className="text-white font-medium text-xl">4</p>
-          <p className="text-white font-medium text-xl">5</p>
-          <p className="text-white font-medium text-xl">6</p>
+          <button
+            onClick={() => handleNumberClick(4)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            4
+          </button>
+          <button
+            onClick={() => handleNumberClick(5)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            5
+          </button>
+          <button
+            onClick={() => handleNumberClick(6)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            6
+          </button>
         </div>
         <div className="flex justify-around">
-          <p className="text-white font-medium text-xl">7</p>
-          <p className="text-white font-medium text-xl">8</p>
-          <p className="text-white font-medium text-xl">9</p>
+          <button
+            onClick={() => handleNumberClick(7)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            7
+          </button>
+          <button
+            onClick={() => handleNumberClick(8)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            8
+          </button>
+          <button
+            onClick={() => handleNumberClick(9)}
+            className="z-50 text-white font-medium text-xl"
+          >
+            9
+          </button>
         </div>
         <div className="flex items-center">
-          <p className="text-white font-medium text-xl flex-1 text-center">,</p>
-          <p className="text-white font-medium text-xl flex-1 text-center">0</p>
+          <button
+            onClick={() => handleNumberClick(",")}
+            className="z-50 text-white font-medium text-xl flex-1 text-center"
+          >
+            ,
+          </button>
+          <button
+            onClick={() => handleNumberClick(0)}
+            className="z-50 text-white font-medium text-xl flex-1 text-center"
+          >
+            0
+          </button>
           <svg
-            className="h-5 w-auto fill-current text-white flex-1"
+            onClick={handleDeleteNumber}
+            className="h-5 w-auto fill-current text-white flex-1 z-50 cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 -960 960 960"
           >
