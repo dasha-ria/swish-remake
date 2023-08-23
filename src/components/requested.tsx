@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export function Requested({ person, amount, message, reset }: any) {
+  const [sentTime] = useState(new Date());
+
   return (
     <div className="relative w-[250px] h-[500px] bg-swish-bg">
       <button onClick={reset} className="z-50 absolute top-12 left-6">
@@ -34,16 +37,26 @@ export function Requested({ person, amount, message, reset }: any) {
           </div>
         </div>
 
-        <div className="chat-bubble relative mt-6 py-2 px-3 bg-swish-blue rounded-2xl max-w-[12.5rem]">
-          <p className="text-white text-xs max-w-[12.5rem] break-words">
-            {message}
-          </p>
-        </div>
+        {message && (
+          <div className="chat-bubble relative mt-6 py-2 px-3 bg-swish-blue rounded-2xl max-w-[12.5rem]">
+            <p className="text-white text-xs max-w-[12.5rem] break-words">
+              {message}
+            </p>
+          </div>
+        )}
 
-        <div className="flex gap-1 mt-2">
-          <p className="text-app-light-gray text-[10px]">12.08.2023</p>
+        <div className="flex gap-1 mt-3">
+          <p className="text-app-light-gray text-[10px]">
+            {sentTime.toLocaleDateString()}
+          </p>
           <p className="text-app-light-gray text-[10px]">·</p>
-          <p className="text-app-light-gray text-[10px]">20:50</p>
+          <p className="text-app-light-gray text-[10px]">
+            {sentTime.toLocaleTimeString("sv-SE", {
+              hour: "numeric",
+              minute: "numeric",
+              hour12: false,
+            })}
+          </p>
         </div>
       </div>
 

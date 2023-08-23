@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export function Sent({ person, amount, message, reset }: any) {
+  const [sentTime] = useState(new Date());
+
   return (
     <div className="relative w-[250px] h-[500px] bg-swish-bg">
       <button onClick={reset} className="z-50 absolute top-12 left-6 ">
@@ -45,11 +48,21 @@ export function Sent({ person, amount, message, reset }: any) {
           </div>
         )}
 
-        <div className="flex gap-1 mt-3">
-          <p className="text-app-light-gray text-[10px]">12.08.2023</p>
-          <p className="text-app-light-gray text-[10px]">·</p>
-          <p className="text-app-light-gray text-[10px]">20:50</p>
-        </div>
+        {sentTime && (
+          <div className="flex gap-1 mt-3">
+            <p className="text-app-light-gray text-[10px]">
+              {sentTime.toLocaleDateString()}
+            </p>
+            <p className="text-app-light-gray text-[10px]">·</p>
+            <p className="text-app-light-gray text-[10px]">
+              {sentTime.toLocaleTimeString("sv-SE", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: false,
+              })}
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="absolute bottom-10 flex justify-center w-full">

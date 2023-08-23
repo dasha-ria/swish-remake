@@ -67,7 +67,9 @@ export function Sending({ amount, person, setMessage, setCurrentPage }: any) {
             </div>
           </div>
           <button
-            onClick={() => setCurrentPage("Sent")}
+            onClick={() => {
+              setCurrentPage("Sent");
+            }}
             className="z-50 bg-swish-blue py-2 rounded-lg w-[12.5rem] text-white font-bold"
           >
             Swish
