@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Init({ amount, setAmount, setCurrentPage }: any) {
   const inputRef = useRef<HTMLDivElement>(null);
+  const [paymentMode, setPaymentMode] = useState("Send");
 
   function handleNumberClick(value: any) {
     if (value === "," && amount.includes(",")) {
@@ -46,7 +47,12 @@ export function Init({ amount, setAmount, setCurrentPage }: any) {
       </div>
 
       <div className="flex justify-center gap-2 pt-6">
-        <button className="flex justify-center items-center gap-[3px] py-1 w-14 rounded-full bg-swish-blue">
+        <button
+          onClick={() => setPaymentMode("Send")}
+          className={`z-50 flex justify-center items-center gap-[3px] py-1 w-14 rounded-full ${
+            paymentMode === "Send" ? "bg-swish-blue" : "bg-app-init-buttons"
+          }`}
+        >
           <svg
             className="h-[0.7rem] w-auto fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +62,12 @@ export function Init({ amount, setAmount, setCurrentPage }: any) {
           </svg>
           <p className="text-white text-[0.6rem] font-bold">Send</p>
         </button>
-        <button className="flex justify-center items-center gap-[3px] py-1 w-16 rounded-full bg-app-init-buttons">
+        <button
+          onClick={() => setPaymentMode("Request")}
+          className={`z-50 flex justify-center items-center gap-[3px] py-1 w-16 rounded-full ${
+            paymentMode === "Request" ? "bg-swish-blue" : "bg-app-init-buttons"
+          }`}
+        >
           <svg
             className="h-[0.7rem] w-auto fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
