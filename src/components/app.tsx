@@ -18,6 +18,7 @@ export function App() {
     color: "#ff0000",
   });
   const [message, setMessage] = useState("");
+  const [paymentMode, setPaymentMode] = useState("Send");
 
   const reset = () => {
     setAmount("");
@@ -32,6 +33,8 @@ export function App() {
         amount={amount}
         setAmount={setAmount}
         setCurrentPage={setCurrentPage}
+        paymentMode={paymentMode}
+        setPaymentMode={setPaymentMode}
       ></Init>
     );
   } else if (currentPage === "ChoosePerson") {
@@ -39,6 +42,7 @@ export function App() {
       <ChoosePerson
         setPerson={setPerson}
         setCurrentPage={setCurrentPage}
+        paymentMode={paymentMode}
       ></ChoosePerson>
     );
   } else if (currentPage === "Sending") {
@@ -60,8 +64,22 @@ export function App() {
       ></Sent>
     );
   } else if (currentPage === "Requesting") {
-    return <Requesting></Requesting>;
+    return (
+      <Requesting
+        amount={amount}
+        person={person}
+        setMessage={setMessage}
+        setCurrentPage={setCurrentPage}
+      ></Requesting>
+    );
   } else if (currentPage === "Requested") {
-    return <Requested></Requested>;
+    return (
+      <Requested
+        person={person}
+        amount={amount}
+        message={message}
+        reset={reset}
+      ></Requested>
+    );
   }
 }

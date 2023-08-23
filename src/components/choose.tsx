@@ -1,4 +1,4 @@
-export function ChoosePerson({ setPerson, setCurrentPage }: any) {
+export function ChoosePerson({ setPerson, setCurrentPage, paymentMode }: any) {
   const people = [
     {
       name: "Erik Johan Andersson",
@@ -51,7 +51,9 @@ export function ChoosePerson({ setPerson, setCurrentPage }: any) {
             <button
               onClick={() => {
                 setPerson({ name, initials, color, number });
-                setCurrentPage("Sending");
+                paymentMode === "Send"
+                  ? setCurrentPage("Sending")
+                  : setCurrentPage("Requesting");
               }}
               key={name}
               className="z-50 w-[64px] h-[64px] rounded-lg bg-app-md-gray flex flex-col p-2 items-center justify-center"

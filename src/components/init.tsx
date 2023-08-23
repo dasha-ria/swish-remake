@@ -1,10 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
-export function Init({ amount, setAmount, setCurrentPage }: any) {
+export function Init({
+  amount,
+  setAmount,
+  setCurrentPage,
+  paymentMode,
+  setPaymentMode,
+}: any) {
   const inputRef = useRef<HTMLDivElement>(null);
-  const [paymentMode, setPaymentMode] = useState("Send");
 
   function handleNumberClick(value: any) {
     if (value === "," && amount.includes(",")) {
