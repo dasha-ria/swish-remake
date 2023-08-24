@@ -3,7 +3,7 @@ export function Sending({ amount, person, setMessage, setCurrentPage }: any) {
     <div className="relative w-[250px] h-[500px] bg-swish-bg">
       <button
         onClick={() => setCurrentPage("Init")}
-        className="z-50 absolute top-12 left-6 "
+        className="z-50 absolute top-12 left-6"
       >
         <svg
           className="h-8 w-auto fill-current text-white"
@@ -70,7 +70,7 @@ export function Sending({ amount, person, setMessage, setCurrentPage }: any) {
             onClick={() => {
               setCurrentPage("Sent");
             }}
-            className="z-50 bg-swish-blue py-2 rounded-lg w-[12.5rem] text-white font-bold"
+            className="z-50 bg-swish-blue active:bg-button-active py-2 rounded-lg w-[12.5rem] text-white font-bold"
           >
             Swish
           </button>

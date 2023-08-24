@@ -6,7 +6,7 @@ export function Sent({ person, amount, message, reset }: any) {
 
   return (
     <div className="relative w-[250px] h-[500px] bg-swish-bg">
-      <button onClick={reset} className="z-50 absolute top-12 left-6 ">
+      <button onClick={reset} className="z-50 absolute top-12 left-6">
         <svg
           className="h-8 w-auto fill-current text-white"
           xmlns="http://www.w3.org/2000/svg"

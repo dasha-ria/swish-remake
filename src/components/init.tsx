@@ -93,94 +93,93 @@ export function Init({
           <p className="text-white text-[0.6rem]">Scan</p>
         </button>
       </div>
-      <div className="flex mt-4 mx-auto justify-center flex-col gap-3 w-[12.5rem] h-44 bg-app-md-gray rounded-xl tabular-nums">
-        <div className="flex justify-around">
-          <button
-            onClick={() => handleNumberClick(1)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            1
-          </button>
-          <button
-            onClick={() => handleNumberClick(2)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            2
-          </button>
-          <button
-            onClick={() => handleNumberClick(3)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            3
-          </button>
-        </div>
-        <div className="flex justify-around">
-          <button
-            onClick={() => handleNumberClick(4)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            4
-          </button>
-          <button
-            onClick={() => handleNumberClick(5)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            5
-          </button>
-          <button
-            onClick={() => handleNumberClick(6)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            6
-          </button>
-        </div>
-        <div className="flex justify-around">
-          <button
-            onClick={() => handleNumberClick(7)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            7
-          </button>
-          <button
-            onClick={() => handleNumberClick(8)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            8
-          </button>
-          <button
-            onClick={() => handleNumberClick(9)}
-            className="z-50 text-white font-medium text-xl"
-          >
-            9
-          </button>
-        </div>
-        <div className="flex items-center">
-          <button
-            onClick={() => handleNumberClick(",")}
-            className="z-50 text-white font-medium text-xl flex-1 text-center"
-          >
-            ,
-          </button>
-          <button
-            onClick={() => handleNumberClick(0)}
-            className="z-50 text-white font-medium text-xl flex-1 text-center"
-          >
-            0
-          </button>
+      <div className="grid grid-cols-3 mt-4 mx-auto w-[12.5rem] h-44 bg-app-md-gray rounded-xl tabular-nums">
+        <button
+          onClick={() => handleNumberClick(1)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          1
+        </button>
+        <button
+          onClick={() => handleNumberClick(2)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          2
+        </button>
+        <button
+          onClick={() => handleNumberClick(3)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          3
+        </button>
+
+        <button
+          onClick={() => handleNumberClick(4)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          4
+        </button>
+        <button
+          onClick={() => handleNumberClick(5)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          5
+        </button>
+        <button
+          onClick={() => handleNumberClick(6)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          6
+        </button>
+
+        <button
+          onClick={() => handleNumberClick(7)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          7
+        </button>
+        <button
+          onClick={() => handleNumberClick(8)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          8
+        </button>
+        <button
+          onClick={() => handleNumberClick(9)}
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+        >
+          9
+        </button>
+
+        <button
+          onClick={() => handleNumberClick(",")}
+          className="z-50 text-white font-medium text-xl text-center rounded-xl active:bg-white/5"
+        >
+          ,
+        </button>
+        <button
+          onClick={() => handleNumberClick(0)}
+          className="z-50 text-white font-medium text-xl text-center rounded-xl active:bg-white/5"
+        >
+          0
+        </button>
+        <button
+          onClick={handleDeleteNumber}
+          className="flex justify-center items-center z-50 rounded-xl active:bg-white/5"
+        >
           <svg
-            onClick={handleDeleteNumber}
-            className="h-5 w-auto fill-current text-white flex-1 z-50 cursor-pointer"
+            className="h-6 w-auto fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 -960 960 960"
           >
             <path d="M360-200q-22 0-40-11.5T289-241L120-480l169-239q13-18 31-29.5t40-11.5h420q24.75 0 42.375 17.625T840-700v440q0 24.75-17.625 42.375T780-200H360Zm420-60v-440 440Zm-431 0h431v-440H349L195-480l154 220Zm99-66 112-112 112 112 43-43-113-111 111-111-43-43-110 112-112-112-43 43 113 111-113 111 43 43Z" />
           </svg>
-        </div>
+        </button>
       </div>
       <div className="flex justify-center mt-4">
         <button
           onClick={() => setCurrentPage("ChoosePerson")}
-          className="bg-swish-blue py-2 rounded-lg w-[12.5rem] text-white font-bold z-50"
+          className="bg-swish-blue active:bg-button-active py-2 rounded-lg w-[12.5rem] text-white font-bold z-50"
         >
           Next
         </button>

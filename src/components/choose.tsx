@@ -56,7 +56,7 @@ export function ChoosePerson({ setPerson, setCurrentPage, paymentMode }: any) {
                   : setCurrentPage("Requesting");
               }}
               key={name}
-              className="z-50 w-[64px] h-[64px] rounded-lg bg-app-md-gray flex flex-col p-2 items-center justify-center"
+              className="z-50 w-[64px] h-[64px] rounded-lg bg-app-md-gray active:bg-[#1D1E24] flex flex-col p-2 items-center justify-center"
             >
               <div
                 style={{ backgroundColor: color }}
@@ -78,7 +78,7 @@ export function ChoosePerson({ setPerson, setCurrentPage, paymentMode }: any) {
           </div>
           <button
             onClick={() => setCurrentPage("Init")}
-            className="text-[10px] text-swish-blue z-50"
+            className="text-[10px] text-swish-blue active:text-button-active z-50"
           >
             Cancel
           </button>

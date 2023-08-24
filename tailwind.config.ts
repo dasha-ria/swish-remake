@@ -29,6 +29,7 @@ const config: Config = {
         "app-md-gray": "#18191E",
         "app-dark-gray": "#131418",
         "app-light-gray": "#929290",
+        "button-active": "#1AB2F2",
       },
       blur: {
         "4xl": "120px",

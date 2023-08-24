@@ -63,7 +63,7 @@ export function Requesting({
           </div>
           <button
             onClick={() => setCurrentPage("Requested")}
-            className="z-50 bg-swish-blue py-2 rounded-lg w-[12.5rem] text-white font-bold"
+            className="z-50 bg-swish-blue active:bg-button-active py-2 rounded-lg w-[12.5rem] text-white font-bold"
           >
             Request
           </button>
