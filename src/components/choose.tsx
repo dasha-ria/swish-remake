@@ -1,4 +1,9 @@
-export function ChoosePerson({ setPerson, setCurrentPage, paymentMode }: any) {
+export function ChoosePerson({
+  person,
+  setPerson,
+  setCurrentPage,
+  paymentMode,
+}: any) {
   const people = [
     {
       name: "Erik Johan Andersson",
@@ -56,7 +61,9 @@ export function ChoosePerson({ setPerson, setCurrentPage, paymentMode }: any) {
                   : setCurrentPage("Requesting");
               }}
               key={name}
-              className="z-50 w-[64px] h-[64px] rounded-lg bg-app-md-gray active:bg-[#1D1E24] flex flex-col p-2 items-center justify-center"
+              className={`z-50 w-[64px] h-[64px] rounded-lg  active:bg-[#1D1E24] flex flex-col p-2 items-center justify-center ${
+                person?.name === name ? "bg-[#1D1E24]" : "bg-app-md-gray"
+              }`}
             >
               <div
                 style={{ backgroundColor: color }}

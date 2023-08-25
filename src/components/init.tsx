@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export function Init({
   amount,
@@ -8,6 +8,9 @@ export function Init({
   setCurrentPage,
   paymentMode,
   setPaymentMode,
+  btn0Ref,
+  btn2Ref,
+  btnNextRef,
 }: any) {
   const inputRef = useRef<HTMLDivElement>(null);
 
@@ -16,19 +19,19 @@ export function Init({
       return;
     }
     const nextAmount = amount + value.toString();
-    if (inputRef.current !== null) {
-      inputRef.current.textContent = nextAmount;
-    }
     setAmount(nextAmount);
   }
 
   function handleDeleteNumber() {
     const deleteAmount = amount.slice(0, -1);
-    if (inputRef.current !== null) {
-      inputRef.current.textContent = deleteAmount;
-    }
     setAmount(deleteAmount);
   }
+
+  useEffect(() => {
+    if (inputRef.current !== null) {
+      inputRef.current.textContent = amount;
+    }
+  }, [amount]);
 
   return (
     <div className="w-[250px] h-[500px] bg-swish-bg">
@@ -101,8 +104,9 @@ export function Init({
           1
         </button>
         <button
+          ref={btn2Ref}
           onClick={() => handleNumberClick(2)}
-          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5 focus:bg-white/5 outline-none"
         >
           2
         </button>
@@ -158,8 +162,9 @@ export function Init({
           ,
         </button>
         <button
+          ref={btn0Ref}
           onClick={() => handleNumberClick(0)}
-          className="z-50 text-white font-medium text-xl text-center rounded-xl active:bg-white/5"
+          className="z-50 text-white font-medium text-xl text-center rounded-xl active:bg-white/5 focus:bg-white/5 outline-none"
         >
           0
         </button>
@@ -178,8 +183,9 @@ export function Init({
       </div>
       <div className="flex justify-center mt-4">
         <button
+          ref={btnNextRef}
           onClick={() => setCurrentPage("ChoosePerson")}
-          className="bg-swish-blue active:bg-button-active py-2 rounded-lg w-[12.5rem] text-white font-bold z-50"
+          className="bg-swish-blue active:bg-button-active focus:bg-button-active outline-none py-2 rounded-lg w-[12.5rem] text-white font-bold z-50"
         >
           Next
         </button>
