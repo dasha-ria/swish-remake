@@ -1,8 +1,10 @@
 export function Requesting({
   amount,
   person,
+  message,
   setMessage,
   setCurrentPage,
+  btnRequestingRef,
 }: any) {
   return (
     <div className="relative w-[250px] h-[500px] bg-swish-bg">
@@ -45,6 +47,7 @@ export function Requesting({
         <form className="flex flex-col justify-center items-center gap-4 mt-12">
           <div className="flex flex-col bg-app-md-gray rounded-lg w-[12.5rem] h-28 placeholder-app-light-gray">
             <textarea
+              value={message}
               onChange={(e) => setMessage(e.target.value)}
               className="bg-transparent p-2 flex-1 z-50 resize-none outline-none text-white"
               placeholder="Write a message.."
@@ -62,8 +65,9 @@ export function Requesting({
             </div>
           </div>
           <button
+            ref={btnRequestingRef}
             onClick={() => setCurrentPage("Requested")}
-            className="z-50 bg-swish-blue active:bg-button-active py-2 rounded-lg w-[12.5rem] text-white font-bold"
+            className="z-50 bg-swish-blue active:bg-button-active focus:bg-button-active outline-none py-2 rounded-lg w-[12.5rem] text-white font-bold"
           >
             Request
           </button>

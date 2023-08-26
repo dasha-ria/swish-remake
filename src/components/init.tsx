@@ -10,6 +10,8 @@ export function Init({
   setPaymentMode,
   btn0Ref,
   btn2Ref,
+  btn3Ref,
+  btn5Ref,
   btnNextRef,
 }: any) {
   const inputRef = useRef<HTMLDivElement>(null);
@@ -111,8 +113,9 @@ export function Init({
           2
         </button>
         <button
+          ref={btn3Ref}
           onClick={() => handleNumberClick(3)}
-          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5 focus:bg-white/5 outline-none"
         >
           3
         </button>
@@ -124,8 +127,9 @@ export function Init({
           4
         </button>
         <button
+          ref={btn5Ref}
           onClick={() => handleNumberClick(5)}
-          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5 focus:bg-white/5 outline-none"
         >
           5
         </button>
