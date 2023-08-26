@@ -1,6 +1,13 @@
+"use client";
+
+import { App } from "@/components/app";
+import { Phone } from "@/components/phone";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [showcaseMode, setShowcaseMode] = useState("sending");
+
   return (
     <div className="bg-swish-bg min-w-screen min-h-screen">
       <div className="max-w-[1400px] mx-auto">
@@ -41,13 +48,16 @@ export default function Home() {
           <div className="w-full absolute flex justify-center lg:pl-[30vw] items-center top-0 lg:top-12 -z-10">
             <div className="w-[30rem] h-[30rem] lg:w-[34rem] lg:h-[34rem] rounded-full bg-swish-blue/40 md:bg-swish-blue/30 blur-3xl lg:blur-4xl"></div>
 
-            <Image
+            {/* <Image
               className="w-52 md:w-72 h-auto absolute"
               src="/phone-homepage.png"
               alt="Phone showcasing Swish app"
               width="1656"
               height="3407"
-            ></Image>
+            ></Image> */}
+            <Phone className="scale-[1.15] absolute">
+              <App></App>
+            </Phone>
           </div>
         </div>
 
@@ -73,7 +83,14 @@ export default function Home() {
 
         <div className="pt-24 lg:flex lg:gap-40">
           <div className="lg:pl-32 lg:flex lg:flex-col lg:gap-14">
-            <div className="lg:px-8 lg:py-8 lg:flex lg:items-center lg:w-[24rem] lg:h-60 lg:bg-gradient-to-t lg:rounded-xl  lg:from-dark-gray2 lg:to-light-gray2">
+            <div
+              onClick={() => setShowcaseMode("sending")}
+              className={`lg:px-8 lg:py-8 lg:flex lg:items-center lg:w-[24rem] lg:h-60 ${
+                showcaseMode === "sending"
+                  ? "lg:bg-gradient-to-t lg:rounded-xl  lg:from-dark-gray2 lg:to-light-gray2"
+                  : ""
+              }  cursor-pointer`}
+            >
               <div>
                 <div className="ml-16 lg:ml-0 flex items-center justify-center rounded-md lg:rounded-lg bg-gradient-to-t from-dark-gray to-light-gray w-10 h-10 ">
                   <svg
@@ -92,7 +109,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="hidden lg:px-8 lg:py-8 lg:flex lg:items-center lg:w-[24rem] lg:h-64">
+            <div
+              onClick={() => setShowcaseMode("requesting")}
+              className={`hidden lg:px-8 lg:py-8 lg:flex lg:items-center lg:w-[24rem] lg:h-64 cursor-pointer ${
+                showcaseMode === "requesting"
+                  ? "lg:bg-gradient-to-t lg:rounded-xl  lg:from-dark-gray2 lg:to-light-gray2"
+                  : ""
+              }`}
+            >
               <div>
                 <div className="ml-16 lg:ml-0 flex items-center justify-center rounded-md lg:rounded-lg bg-gradient-to-t from-dark-gray to-light-gray w-10 h-10 ">
                   <svg
@@ -113,13 +137,21 @@ export default function Home() {
             </div>
           </div>
           <div className="pt-12 lg:pt-0 lg:-mt-4 flex justify-center items-center">
-            <Image
+            {/* <Image
               className="w-64 lg:w-72 h-auto"
               src="/phone-homepage.png"
               alt="Phone showcasing Swish app"
               width="1656"
               height="3407"
-            ></Image>
+            ></Image> */}
+            <Phone className="scale-110">
+              {showcaseMode === "sending" && (
+                <App animationFlow="sending"></App>
+              )}
+              {showcaseMode === "requesting" && (
+                <App animationFlow="requesting"></App>
+              )}
+            </Phone>
           </div>
         </div>
         <div className="pt-20 lg:hidden">
