@@ -28,7 +28,10 @@ export function Requested({ person, amount, message, reset }: any) {
         </svg>
 
         <div className="flex gap-3 items-center mt-6">
-          <div className="h-9 w-9 bg-[#578EF7] rounded-full flex justify-center items-center">
+          <div
+            style={{ backgroundColor: person.color }}
+            className="h-9 w-9 rounded-full flex justify-center items-center"
+          >
             <p className="text-white font-bold">{person.initials}</p>
           </div>
           <div>
