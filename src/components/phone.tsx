@@ -58,3 +58,5 @@ export const Phone = forwardRef<HTMLDivElement, any>(
     );
   }
 );
+
+Phone.displayName = "Phone";
