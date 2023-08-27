@@ -3,10 +3,52 @@
 import { App } from "@/components/app";
 import { Phone } from "@/components/phone";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [showcaseMode, setShowcaseMode] = useState("sending");
+  const [startAnimation, setStartAnimation] = useState(false);
+  const phoneRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const target = phoneRef.current;
+
+    const observer = new IntersectionObserver(
+      (data) => {
+        console.log(data);
+
+        const [entry] = data;
+
+        // This will trigger when the element enters or exits the viewport
+        if (entry.isIntersecting) {
+          // Element entered the viewport
+          setStartAnimation(true);
+        } else {
+          // Element exited the viewport
+          setStartAnimation(false);
+        }
+      },
+      {
+        // Configure the Intersection Observer
+        rootMargin: "0px",
+        threshold: 0.1, // Adjust this value as needed
+      }
+    );
+
+    // Target the element to observe
+
+    if (target) {
+      observer.observe(target);
+    }
+
+    // Clean up
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, []);
 
   return (
     <div className="bg-swish-bg min-w-screen min-h-screen">
@@ -144,11 +186,12 @@ export default function Home() {
               width="1656"
               height="3407"
             ></Image> */}
-            <Phone className="scale-110">
-              {showcaseMode === "sending" && (
+            <Phone className="scale-110" ref={phoneRef}>
+              {!startAnimation && <App />}
+              {showcaseMode === "sending" && startAnimation && (
                 <App animationFlow="sending"></App>
               )}
-              {showcaseMode === "requesting" && (
+              {showcaseMode === "requesting" && startAnimation && (
                 <App animationFlow="requesting"></App>
               )}
             </Phone>
@@ -192,11 +235,15 @@ export default function Home() {
           <p className="text-2xl lg:text-4xl text-center font-bold text-white pt-12 lg:pt-16">
             Join 8+ million people<br></br>already using Swish.
           </p>
-          <button className="mt-8 lg:mt-12 bg-swish-blue px-12 py-4 rounded-xl">
+
+          <a
+            href="/phone"
+            className="z-50 mt-8 lg:mt-12 bg-swish-blue px-12 py-4 rounded-xl"
+          >
             <p className="text-white font-bold text-xl lg:text-2xl">
               Download Swish
             </p>
-          </button>
+          </a>
         </div>
       </div>
       <div className="-mt-28 relative h-72 w-full bg-gradient-to-t from-swish-blue/30 to-swish-bg/0"></div>

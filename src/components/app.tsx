@@ -12,6 +12,11 @@ type AppProps = {
   animationFlow?: "sending" | "requesting";
 };
 
+function setIntervalImmediately(func: Function, interval: number) {
+  func();
+  return setInterval(func, interval);
+}
+
 export function App({ animationFlow }: AppProps) {
   const [currentPage, setCurrentPage] = useState("Init");
   const [amount, setAmount] = useState("");
@@ -41,7 +46,7 @@ export function App({ animationFlow }: AppProps) {
       let i = 0;
       const states = ["Init", "ChoosePerson", "Sending", "Sent"];
 
-      intervalId = setInterval(() => {
+      intervalId = setIntervalImmediately(() => {
         if (i === 0) {
           reset();
 
@@ -125,7 +130,7 @@ export function App({ animationFlow }: AppProps) {
       let i = 0;
       const states = ["Init", "ChoosePerson", "Requesting", "Requested"];
 
-      intervalId = setInterval(() => {
+      intervalId = setIntervalImmediately(() => {
         if (i === 0) {
           reset();
 
