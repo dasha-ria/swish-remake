@@ -4,37 +4,32 @@ import { App } from "@/components/app";
 import { Phone } from "@/components/phone";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 
-export default function Home() {
-  const [showcaseMode, setShowcaseMode] = useState("sending");
-  const [startAnimation, setStartAnimation] = useState(false);
-  const phoneRef = useRef<HTMLDivElement>(null);
+function useTargetInView(
+  ref: RefObject<any>,
+  config = {
+    rootMargin: "0px",
+    threshold: 0.1,
+  }
+) {
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const target = phoneRef.current;
+    const target = ref.current;
 
-    const observer = new IntersectionObserver(
-      (data) => {
-        console.log(data);
+    const observer = new IntersectionObserver((data) => {
+      const [entry] = data;
 
-        const [entry] = data;
-
-        // This will trigger when the element enters or exits the viewport
-        if (entry.isIntersecting) {
-          // Element entered the viewport
-          setStartAnimation(true);
-        } else {
-          // Element exited the viewport
-          setStartAnimation(false);
-        }
-      },
-      {
-        // Configure the Intersection Observer
-        rootMargin: "0px",
-        threshold: 0.1, // Adjust this value as needed
+      // This will trigger when the element enters or exits the viewport
+      if (entry.isIntersecting) {
+        // Element entered the viewport
+        setIsInView(true);
+      } else {
+        // Element exited the viewport
+        setIsInView(false);
       }
-    );
+    }, config);
 
     // Target the element to observe
 
@@ -49,6 +44,18 @@ export default function Home() {
       }
     };
   }, []);
+
+  return isInView;
+}
+
+export default function Home() {
+  const [showcaseMode, setShowcaseMode] = useState("sending");
+  const [startAnimation, setStartAnimation] = useState(false);
+  const phoneRef = useRef<HTMLDivElement>(null);
+  const phoneRef2 = useRef<HTMLDivElement>(null);
+
+  const isPhone1InView = useTargetInView(phoneRef);
+  const isPhone2InView = useTargetInView(phoneRef2);
 
   return (
     <div className="bg-swish-bg min-w-screen min-h-screen">
@@ -74,7 +81,10 @@ export default function Home() {
                 Millions of Swedes - from friends, families, small and large
                 businesses - use Swish for quick and smooth payments.
               </p>
-              <button className="mt-6 lg:mt-14 flex items-center bg-swish-blue gap-4 px-6 py-4 rounded-xl">
+              <Link
+                href="/phone"
+                className="w-fit cursor-pointer mt-6 lg:mt-14 flex items-center bg-swish-blue gap-4 px-6 py-4 rounded-xl"
+              >
                 <p className="text-white font-bold text-xl">Get started</p>
                 <svg
                   className="h-6 fill-current text-white"
@@ -83,7 +93,7 @@ export default function Home() {
                 >
                   <path d="M686-450H160v-60h526L438-758l42-42 320 320-320 320-42-42 248-248Z" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -172,8 +182,13 @@ export default function Home() {
           </div>
           <div className="pt-2 lg:pt-0 lg:-mt-4 flex justify-center items-center">
             <Phone className="scale-90 lg:scale-110" ref={phoneRef}>
-              {!startAnimation && <App />}
-              {startAnimation && <App animationFlow="sending"></App>}
+              {!isPhone1InView && <App />}
+              {showcaseMode === "sending" && isPhone1InView && (
+                <App animationFlow="sending"></App>
+              )}
+              {showcaseMode === "requesting" && isPhone1InView && (
+                <App animationFlow="requesting"></App>
+              )}
             </Phone>
           </div>
         </div>
@@ -194,9 +209,9 @@ export default function Home() {
             Money in your bank account in just seconds.
           </p>
           <div className="pt-2 flex justify-center items-center">
-            <Phone className="scale-90 lg:scale-110" ref={phoneRef}>
-              {!startAnimation && <App />}
-              {startAnimation && <App animationFlow="requesting"></App>}
+            <Phone className="scale-90 lg:scale-110" ref={phoneRef2}>
+              {!isPhone2InView && <App />}
+              {isPhone2InView && <App animationFlow="requesting"></App>}
             </Phone>
           </div>
         </div>
@@ -213,14 +228,14 @@ export default function Home() {
             Join 8+ million people<br></br>already using Swish.
           </p>
 
-          <a
+          <Link
             href="/phone"
             className="z-50 mt-8 lg:mt-12 bg-swish-blue px-12 py-4 rounded-xl"
           >
             <p className="text-white font-bold text-xl lg:text-2xl">
               Download Swish
             </p>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="-mt-28 relative h-72 w-full bg-gradient-to-t from-swish-blue/30 to-swish-bg/0"></div>
