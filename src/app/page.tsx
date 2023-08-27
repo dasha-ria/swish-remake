@@ -89,15 +89,7 @@ export default function Home() {
 
           <div className="w-full absolute flex justify-center lg:pl-[30vw] items-center top-0 lg:top-12 -z-10">
             <div className="w-[30rem] h-[30rem] lg:w-[34rem] lg:h-[34rem] rounded-full bg-swish-blue/40 md:bg-swish-blue/30 blur-3xl lg:blur-4xl"></div>
-
-            {/* <Image
-              className="w-52 md:w-72 h-auto absolute"
-              src="/phone-homepage.png"
-              alt="Phone showcasing Swish app"
-              width="1656"
-              height="3407"
-            ></Image> */}
-            <Phone className="scale-[1.15] absolute">
+            <Phone className="scale-100 mt-14 lg:mt-0 lg:scale-[1.15] absolute">
               <App></App>
             </Phone>
           </div>
@@ -178,22 +170,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="pt-12 lg:pt-0 lg:-mt-4 flex justify-center items-center">
-            {/* <Image
-              className="w-64 lg:w-72 h-auto"
-              src="/phone-homepage.png"
-              alt="Phone showcasing Swish app"
-              width="1656"
-              height="3407"
-            ></Image> */}
-            <Phone className="scale-110" ref={phoneRef}>
+          <div className="pt-2 lg:pt-0 lg:-mt-4 flex justify-center items-center">
+            <Phone className="scale-90 lg:scale-110" ref={phoneRef}>
               {!startAnimation && <App />}
-              {showcaseMode === "sending" && startAnimation && (
-                <App animationFlow="sending"></App>
-              )}
-              {showcaseMode === "requesting" && startAnimation && (
-                <App animationFlow="requesting"></App>
-              )}
+              {startAnimation && <App animationFlow="sending"></App>}
             </Phone>
           </div>
         </div>
@@ -213,14 +193,11 @@ export default function Home() {
           <p className="pl-16 text-swish-light-text w-72 pt-2">
             Money in your bank account in just seconds.
           </p>
-          <div className="pt-12 flex justify-center items-center">
-            <Image
-              className="w-64 h-auto"
-              src="/phone-homepage.png"
-              alt="Phone showcasing Swish app"
-              width="1656"
-              height="3407"
-            ></Image>
+          <div className="pt-2 flex justify-center items-center">
+            <Phone className="scale-90 lg:scale-110" ref={phoneRef}>
+              {!startAnimation && <App />}
+              {startAnimation && <App animationFlow="requesting"></App>}
+            </Phone>
           </div>
         </div>
 
