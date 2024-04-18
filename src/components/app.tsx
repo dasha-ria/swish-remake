@@ -32,14 +32,6 @@ export function App({ animationFlow }: AppProps) {
   const btnSendingRef = useRef<HTMLButtonElement>(null);
   const btnRequestingRef = useRef<HTMLButtonElement>(null);
 
-  const btn0RefCurrent = btn0Ref.current;
-  const btn2RefCurrent = btn2Ref.current;
-  const btn3RefCurrent = btn3Ref.current;
-  const btn5RefCurrent = btn5Ref.current;
-  const btnNextRefCurrent = btnNextRef.current;
-  const btnSendingRefCurrent = btnSendingRef.current;
-  const btnRequestingRefCurrent = btnRequestingRef.current;
-
   const reset = () => {
     setAmount("");
     setPerson(null);
@@ -59,59 +51,59 @@ export function App({ animationFlow }: AppProps) {
           reset();
 
           setTimeout(() => {
-            btn2RefCurrent?.setAttribute("tabIndex", "-1");
-            btn2RefCurrent?.focus();
-            btn2RefCurrent?.setAttribute(
+            btn2Ref.current?.setAttribute("tabIndex", "-1");
+            btn2Ref.current?.focus();
+            btn2Ref.current?.setAttribute(
               "tabIndex",
-              btn2RefCurrent?.tabIndex.toString() || "0"
+              btn2Ref.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
               setAmount("2");
             }, 50);
             setTimeout(() => {
-              btn2RefCurrent?.blur();
+              btn2Ref.current?.blur();
             }, 100);
           }, 1000);
 
           setTimeout(() => {
-            btn0RefCurrent?.setAttribute("tabIndex", "-1");
-            btn0RefCurrent?.focus();
-            btn0RefCurrent?.setAttribute(
+            btn0Ref.current?.setAttribute("tabIndex", "-1");
+            btn0Ref.current?.focus();
+            btn0Ref.current?.setAttribute(
               "tabIndex",
-              btn0RefCurrent?.tabIndex.toString() || "0"
+              btn0Ref.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
               setAmount("20");
             }, 50);
             setTimeout(() => {
-              btn0RefCurrent?.blur();
+              btn0Ref.current?.blur();
             }, 100);
           }, 1300);
 
           setTimeout(() => {
-            btn0RefCurrent?.setAttribute("tabIndex", "-1");
-            btn0RefCurrent?.focus();
-            btn0RefCurrent?.setAttribute(
+            btn0Ref.current?.setAttribute("tabIndex", "-1");
+            btn0Ref.current?.focus();
+            btn0Ref.current?.setAttribute(
               "tabIndex",
-              btn0RefCurrent?.tabIndex.toString() || "0"
+              btn0Ref.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
               setAmount("200");
             }, 50);
             setTimeout(() => {
-              btn0RefCurrent?.blur();
+              btn0Ref.current?.blur();
             }, 100);
           }, 1500);
 
           setTimeout(() => {
-            btnNextRefCurrent?.setAttribute("tabIndex", "-1");
-            btnNextRefCurrent?.focus();
-            btnNextRefCurrent?.setAttribute(
+            btnNextRef.current?.setAttribute("tabIndex", "-1");
+            btnNextRef.current?.focus();
+            btnNextRef.current?.setAttribute(
               "tabIndex",
-              btnNextRefCurrent?.tabIndex.toString() || "0"
+              btnNextRef.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
-              btnNextRefCurrent?.blur();
+              btnNextRef.current?.blur();
             }, 200);
           }, 3700);
         }
@@ -131,14 +123,14 @@ export function App({ animationFlow }: AppProps) {
           const msg = "Congratulations!";
 
           setTimeout(() => {
-            btnSendingRefCurrent?.setAttribute("tabIndex", "-1");
-            btnSendingRefCurrent?.focus();
-            btnSendingRefCurrent?.setAttribute(
+            btnSendingRef.current?.setAttribute("tabIndex", "-1");
+            btnSendingRef.current?.focus();
+            btnSendingRef.current?.setAttribute(
               "tabIndex",
-              btnSendingRefCurrent?.tabIndex.toString() || "0"
+              btnSendingRef.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
-              btnSendingRefCurrent?.blur();
+              btnSendingRef.current?.blur();
             }, 200);
           }, 3700);
 
@@ -172,41 +164,41 @@ export function App({ animationFlow }: AppProps) {
           }, 500);
 
           setTimeout(() => {
-            btn3RefCurrent?.setAttribute("tabIndex", "-1");
-            btn3RefCurrent?.focus();
-            btn3RefCurrent?.setAttribute(
+            btn3Ref.current?.setAttribute("tabIndex", "-1");
+            btn3Ref.current?.focus();
+            btn3Ref.current?.setAttribute(
               "tabIndex",
-              btn3RefCurrent?.tabIndex.toString() || "0"
+              btn3Ref.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
               setAmount("3");
             }, 50);
             setTimeout(() => {
-              btn3RefCurrent?.blur();
+              btn3Ref.current?.blur();
             }, 100);
           }, 1000);
 
           setTimeout(() => {
-            btn5RefCurrent?.setAttribute("tabIndex", "-1");
-            btn5RefCurrent?.focus();
-            btn5RefCurrent?.setAttribute(
+            btn5Ref.current?.setAttribute("tabIndex", "-1");
+            btn5Ref.current?.focus();
+            btn5Ref.current?.setAttribute(
               "tabIndex",
-              btn5RefCurrent?.tabIndex.toString() || "0"
+              btn5Ref.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
               setAmount("35");
             }, 50);
             setTimeout(() => {
-              btn5RefCurrent?.blur();
+              btn5Ref.current?.blur();
             }, 100);
           }, 1300);
 
           setTimeout(() => {
-            btn0RefCurrent?.setAttribute("tabIndex", "-1");
-            btn0RefCurrent?.focus();
-            btn0RefCurrent?.setAttribute(
+            btn0Ref.current?.setAttribute("tabIndex", "-1");
+            btn0Ref.current?.focus();
+            btn0Ref.current?.setAttribute(
               "tabIndex",
-              btn0RefCurrent?.tabIndex.toString() || "0"
+              btn0Ref.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
               setAmount("350");
@@ -217,14 +209,14 @@ export function App({ animationFlow }: AppProps) {
           }, 1500);
 
           setTimeout(() => {
-            btnNextRefCurrent?.setAttribute("tabIndex", "-1");
-            btnNextRefCurrent?.focus();
-            btnNextRefCurrent?.setAttribute(
+            btnNextRef.current?.setAttribute("tabIndex", "-1");
+            btnNextRef.current?.focus();
+            btnNextRef.current?.setAttribute(
               "tabIndex",
-              btnNextRefCurrent?.tabIndex.toString() || "0"
+              btnNextRef.current?.tabIndex.toString() || "0"
             );
             setTimeout(() => {
-              btnNextRefCurrent?.blur();
+              btnNextRef.current?.blur();
             }, 200);
           }, 3700);
         }
@@ -244,15 +236,15 @@ export function App({ animationFlow }: AppProps) {
           const msg = "Restaurant bill";
 
           setTimeout(() => {
-            btnRequestingRefCurrent?.setAttribute("tabIndex", "-1");
-            btnRequestingRefCurrent?.focus();
-            btnRequestingRefCurrent?.setAttribute(
+            btnRequestingRef.current?.setAttribute("tabIndex", "-1");
+            btnRequestingRef.current?.focus();
+            btnRequestingRef.current?.setAttribute(
               "tabIndex",
-              btnRequestingRefCurrent?.tabIndex.toString() || "0"
+              btnRequestingRef.current?.tabIndex.toString() || "0"
             );
 
             setTimeout(() => {
-              btnRequestingRefCurrent?.blur();
+              btnRequestingRef.current?.blur();
             }, 200);
           }, 3700);
 

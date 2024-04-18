@@ -101,7 +101,7 @@ export function Init({
       <div className="grid grid-cols-3 mt-4 mx-auto w-[12.5rem] h-44 bg-app-md-gray rounded-xl tabular-nums">
         <button
           onClick={() => handleNumberClick(1)}
-          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5"
+          className="z-50 text-white font-medium text-xl rounded-xl active:bg-white/5 focus:bg-white/5 outline-none"
         >
           1
         </button>
