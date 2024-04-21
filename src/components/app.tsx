@@ -51,12 +51,7 @@ export function App({ animationFlow }: AppProps) {
           reset();
 
           setTimeout(() => {
-            btn2Ref.current?.setAttribute("tabIndex", "-1");
-            btn2Ref.current?.focus();
-            btn2Ref.current?.setAttribute(
-              "tabIndex",
-              btn2Ref.current?.tabIndex.toString() || "0"
-            );
+            btn2Ref.current?.focus({ preventScroll: true });
             setTimeout(() => {
               setAmount("2");
             }, 50);
@@ -66,12 +61,7 @@ export function App({ animationFlow }: AppProps) {
           }, 1000);
 
           setTimeout(() => {
-            btn0Ref.current?.setAttribute("tabIndex", "-1");
-            btn0Ref.current?.focus();
-            btn0Ref.current?.setAttribute(
-              "tabIndex",
-              btn0Ref.current?.tabIndex.toString() || "0"
-            );
+            btn0Ref.current?.focus({ preventScroll: true });
             setTimeout(() => {
               setAmount("20");
             }, 50);
@@ -81,12 +71,7 @@ export function App({ animationFlow }: AppProps) {
           }, 1300);
 
           setTimeout(() => {
-            btn0Ref.current?.setAttribute("tabIndex", "-1");
-            btn0Ref.current?.focus();
-            btn0Ref.current?.setAttribute(
-              "tabIndex",
-              btn0Ref.current?.tabIndex.toString() || "0"
-            );
+            btn0Ref.current?.focus({ preventScroll: true });
             setTimeout(() => {
               setAmount("200");
             }, 50);
@@ -96,12 +81,7 @@ export function App({ animationFlow }: AppProps) {
           }, 1500);
 
           setTimeout(() => {
-            btnNextRef.current?.setAttribute("tabIndex", "-1");
-            btnNextRef.current?.focus();
-            btnNextRef.current?.setAttribute(
-              "tabIndex",
-              btnNextRef.current?.tabIndex.toString() || "0"
-            );
+            btnNextRef.current?.focus({ preventScroll: true });
             setTimeout(() => {
               btnNextRef.current?.blur();
             }, 200);
@@ -123,12 +103,7 @@ export function App({ animationFlow }: AppProps) {
           const msg = "Congratulations!";
 
           setTimeout(() => {
-            btnSendingRef.current?.setAttribute("tabIndex", "-1");
-            btnSendingRef.current?.focus();
-            btnSendingRef.current?.setAttribute(
-              "tabIndex",
-              btnSendingRef.current?.tabIndex.toString() || "0"
-            );
+            btnSendingRef.current?.focus({ preventScroll: true });
             setTimeout(() => {
               btnSendingRef.current?.blur();
             }, 200);
@@ -164,12 +139,7 @@ export function App({ animationFlow }: AppProps) {
           }, 500);
 
           setTimeout(() => {
-            btn3Ref.current?.setAttribute("tabIndex", "-1");
-            btn3Ref.current?.focus();
-            btn3Ref.current?.setAttribute(
-              "tabIndex",
-              btn3Ref.current?.tabIndex.toString() || "0"
-            );
+            btn3Ref.current?.focus({ preventScroll: true });
             setTimeout(() => {
               setAmount("3");
             }, 50);
@@ -179,12 +149,7 @@ export function App({ animationFlow }: AppProps) {
           }, 1000);
 
           setTimeout(() => {
-            btn5Ref.current?.setAttribute("tabIndex", "-1");
-            btn5Ref.current?.focus();
-            btn5Ref.current?.setAttribute(
-              "tabIndex",
-              btn5Ref.current?.tabIndex.toString() || "0"
-            );
+            btn5Ref.current?.focus({ preventScroll: true });
             setTimeout(() => {
               setAmount("35");
             }, 50);
@@ -194,12 +159,7 @@ export function App({ animationFlow }: AppProps) {
           }, 1300);
 
           setTimeout(() => {
-            btn0Ref.current?.setAttribute("tabIndex", "-1");
-            btn0Ref.current?.focus();
-            btn0Ref.current?.setAttribute(
-              "tabIndex",
-              btn0Ref.current?.tabIndex.toString() || "0"
-            );
+            btn0Ref.current?.focus({ preventScroll: true });
             setTimeout(() => {
               setAmount("350");
             }, 50);
@@ -209,12 +169,7 @@ export function App({ animationFlow }: AppProps) {
           }, 1500);
 
           setTimeout(() => {
-            btnNextRef.current?.setAttribute("tabIndex", "-1");
-            btnNextRef.current?.focus();
-            btnNextRef.current?.setAttribute(
-              "tabIndex",
-              btnNextRef.current?.tabIndex.toString() || "0"
-            );
+            btnNextRef.current?.focus({ preventScroll: true });
             setTimeout(() => {
               btnNextRef.current?.blur();
             }, 200);
@@ -236,13 +191,7 @@ export function App({ animationFlow }: AppProps) {
           const msg = "Restaurant bill";
 
           setTimeout(() => {
-            btnRequestingRef.current?.setAttribute("tabIndex", "-1");
-            btnRequestingRef.current?.focus();
-            btnRequestingRef.current?.setAttribute(
-              "tabIndex",
-              btnRequestingRef.current?.tabIndex.toString() || "0"
-            );
-
+            btnRequestingRef.current?.focus({ preventScroll: true });
             setTimeout(() => {
               btnRequestingRef.current?.blur();
             }, 200);
