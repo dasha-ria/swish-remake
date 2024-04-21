@@ -51,7 +51,7 @@ export function Init({
           contentEditable
           suppressContentEditableWarning={true}
           className="bg-swish-bg outline-none border-red-500 min-w-[12px] fit-content text-white font-medium text-2xl z-50"
-          onInput={(e) => setAmount(e.currentTarget.textContent)}
+          onChange={(e) => setAmount(e.currentTarget.textContent)}
         />
         <h1 className="text-white font-medium text-2xl">kr</h1>
       </div>
